@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vistastyle Bag</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #feedf6;
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+.cart {
+    flex: 2;
+}
+
+.product {
+    display: flex;
+    margin-bottom: 20px;
+    border-style: ridge;
+    margin-right: 180px;
+    margin-left: 80px;
+}
+
+.product img {
+    width: 230px;
+    height: 230px;
+    margin-right: 130px;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.summary {
+    flex: 1;
+    border-style: ridge;
+    padding: 20px;
+    text-align: center;
+    margin-right: 80px;
+    height: 20%;
+}
+
+.summary-details {
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.remove-btn,
+.checkout-btn {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover,
+.checkout-btn:hover {
+    background-color: #dc3545;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 12%;
+    height: 30%;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: hsl(0, 0%, 93%);
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 50px;
+}
+
+.navbar ul li a {
+    color: hsl(0, 0%, 13%);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+    color: hsl(353, 100%, 78%);
+}
+
+/* Header Search Styles */
+.header-search-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 90px; /* Adjusted position */
+}
+
+.search-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 300px; /* Adjust width as needed for mobile */
+}
+
+.search-btn {
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: hsl(0, 0%, 93%);
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    bottom: 0;
+    color: #000;
+}
+
+    </style>
+</head>
+<body>
+        <!-- Navbar -->
+        <div class="navbar">
+            <ul>
+                <li><a href="http://localhost:8080/">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="http://localhost:8080/register/Wishlist">WISHLIST</a></li>
+                <li><a href="cart.html">CART</a></li>
+                <li><a href="account.html">MY ACCOUNT</a></li>
+            </ul>
+            <div class="header-search-container">
+                <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
+                <button class="search-btn">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    
+        <!-- Main content -->
+        <main>
+            <!-- Shopping cart items -->
+            <section class="cart">
+                <!-- Product 1 -->
+                <div class="product">
+                    <img src="/assets/images/products/jacket-4.jpg" alt="Product 1">
+                    <div class="product-details">
+                        <h2>JACKET</h2>
+                        <p>Size: <span class="size">Large</span> <button class="change-size-btn">Change Size</button></p>
+                        <p>Price: ₹3600.00</p>
+                        <p>Quantity: <span class="quantity">1</span> <button class="decrement-btn">-</button> <button class="increment-btn">+</button></p>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                </div>
+    
+                <!-- Product 2 -->
+                <div class="product">
+                    <img src="/assets/images/products/sports-2.jpg" alt="Product 2">
+                    <div class="product-details">
+                        <h2>SPORTS</h2>
+                        <p>Size: <span class="size">Large</span> <button class="change-size-btn">Change Size</button></p>
+                        <p>Price: ₹4350.00</p>
+                        <p>Quantity: <span class="quantity">2</span> <button class="decrement-btn">-</button> <button class="increment-btn">+</button></p>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                </div>
+    
+                <!-- Product 3 -->
+                <div class="product">
+                    <img src="/assets/images/products/watch-2.jpg" alt="Product 3">
+                    <div class="product-details">
+                        <h2>WATCHES</h2>
+                        <p>Size: <span class="size">Large</span> <button class="change-size-btn">Change Size</button></p>
+                        <p>Price: ₹7500.00</p>
+                        <p>Quantity: <span class="quantity">2</span> <button class="decrement-btn">-</button> <button class="increment-btn">+</button></p>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                </div>
+            </section>
+    
+<!-- Popup for changing size -->
+<div id="size-popup" class="popup">
+    <div class="popup-content">
+        <h3>Choose Size</h3>
+        <select id="size-select">
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+        <button id="update-size-btn">Update Size</button>
+    </div>
+</div>
+
+    
+            <!-- Summary section -->
+            <section class="summary">
+                <h2>Order Summary</h2>
+                <div class="summary-details">
+                    <p>Total Items: 3</p>
+                    <p>Total Price: ₹15,450.00</p>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </section>
+        </main>
+    
+        <!-- Footer -->
+        <footer>
+            <div class="footer-bottom">
+                <div class="container">
+                    <img src="/assets/images/payment.png" alt="payment method" class="payment-img">
+                    <p class="copyright">Copyright &copy; <a href="#">VistaStyle</a> all rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Remove item from cart
+    function removeItem(event) {
+        const item = event.target.closest('.product');
+        if (item) {
+            item.remove();
+        }
+    }
+
+    // Add event listeners to remove buttons
+    const removeButtons = document.querySelectorAll('.remove-btn');
+    removeButtons.forEach(button => {
+        button.addEventListener('click', removeItem);
+    });
+
+// Popup for changing size
+const changeSizeButtons = document.querySelectorAll(".change-size-btn");
+changeSizeButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        const sizePopup = button.parentElement.parentElement.querySelector(".size-popup"); // Target the correct size popup
+        sizePopup.style.display = "block";
+    });
+});
+
+// Update size
+document.getElementById("update-size-btn").addEventListener("click", function() {
+    const newSize = document.getElementById("size-select").value;
+    const sizeSpans = document.querySelectorAll(".product-details .size");
+    sizeSpans.forEach(span => {
+        span.innerText = newSize;
+    });
+    document.querySelectorAll(".size-popup").forEach(popup => {
+        popup.style.display = "none";
+    });
+});
+
+    // Quantity decrease
+    const decrementButtons = document.querySelectorAll(".decrement-btn");
+    decrementButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const quantityElement = button.parentElement.querySelector(".quantity");
+            if (quantityElement) {
+                let currentQuantity = parseInt(quantityElement.innerText);
+                if (currentQuantity > 1) {
+                    currentQuantity--;
+                    quantityElement.innerText = currentQuantity;
+                }
+            }
+        });
+    });
+
+    // Quantity increase
+    const incrementButtons = document.querySelectorAll(".increment-btn");
+    incrementButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const quantityElement = button.parentElement.querySelector(".quantity");
+            if (quantityElement) {
+                let currentQuantity = parseInt(quantityElement.innerText);
+                currentQuantity++;
+                quantityElement.innerText = currentQuantity;
+            }
+        });
+    });
+});
+
+</script>
+</html>

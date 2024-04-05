@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Cards</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #feedf6;
+}
+
+.main {
+    padding: 20px;
+}
+
+.gift-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 6%;
+}
+
+.gift-card {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+    
+}
+
+.gift-card img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 5px;
+}
+.gift-card h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.gift-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.gift-card p {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.gift-card button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gift-card button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+/* Navbar Styles */
+.navbar {
+    background-color: hsl(0, 0%, 93%);
+    padding: 20px;
+    position: fixed;
+    top: 0;
+  width: 100%;
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+.navbar ul li {
+    display: inline;
+    margin-right: 50px;
+}
+.navbar ul li a {
+    color: hsl(0, 0%, 13%);
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar ul li a:hover {
+    text-decoration: underline;
+    color: hsl(353, 100%, 78%);
+}
+
+/* Header Search Styles */
+.header-search-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 90px;
+    top: 30%;
+}
+.search-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 300px; /* Adjust width as needed for mobile */
+}
+.search-btn {
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="http://localhost:8080/">HOME</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+            <li><a href="http://localhost:8080/register/Wishlist">WISHLIST</a></li>
+            <li><a href="cart.html">CART</a></li>
+            <li><a href="account.html">MY ACCOUNT</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+        <div class="header-search-container">
+
+            <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
+      
+            <button class="search-btn">
+                <i class="fa fa-search"></i>
+            </button>
+      
+          </div>
+    </div>
+    <main>
+        <section class="gift-cards">
+            <div class="gift-card">
+                <img src="\assets\images\Gift-Card\Gift-1.jpg" alt="Gift Card 1">
+                <h3>₹500.00 Gift Card</h3>
+                <h4>Merry Christmas!</h4>
+                <p>Our ₹500.00 gift card is the ultimate present for your loved ones. Shop now!</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="gift-card">
+                <img src="\assets\images\Gift-Card\gift-2.jpg" alt="Gift Card 2">
+                <h3>₹490.00 Gift Card</h3>
+                <h4>Ramadan Mubarak!</h4>
+                <p>Our ₹490.00 gift card is the ultimate present for your loved ones. Shop now!</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="gift-card">
+                <img src="\assets\images\Gift-Card\gift-3.jpg" alt="Gift Card 3">
+                <h3>₹529.00 Gift Card</h3>
+                <h4>Holi Festival!</h4>
+                <p>Our ₹529.00 gift card is the ultimate present for your loved ones. Shop now!</p>
+                <button>Buy Now</button>
+
+            </div>
+            <div class="gift-card">
+                <img src="\assets\images\Gift-Card\gift-4.jpg" alt="Gift Card 4">
+                <h3>₹549.00 Gift Card</h3>
+                <h4>Father's Day!</h4>
+                <p>Our ₹549.00 gift card is the ultimate present for your loved ones. Shop now!</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="gift-card">
+                <img src="\assets\images\Gift-Card\gift-5.jpg" alt="Gift Card 5">
+                <h3>₹349.00 Gift Card</h3>
+                <h4>Happy Birthday!</h4>
+                <p>Our ₹349.00 gift card is the ultimate present for your loved ones. Shop now!</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="gift-card">
+                <img src="\assets\images\Gift-Card\gift-6.jpg" alt="Gift Card 5">
+                <h3>₹349.00 Gift Card</h3>
+                <h4>Anniversary!</h4>
+                <p>Our ₹349.00 gift card is the ultimate present for your loved ones. Shop now!</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="gift-card">
+                <img src="\assets\images\Gift-Card\gift-7.jpeg" alt="Gift Card 5">
+                <h3>₹449.00 Gift Card</h3>
+                <h4>Valentine day!</h4>
+                <p>Our ₹449.00 gift card is the ultimate present for your loved ones. Shop now!</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="gift-card">
+                <img src="\assets\images\Gift-Card\gift-8.jpeg" alt="Gift Card 5">
+                <h3>₹489.00 Gift Card</h3>
+                <h4>Friendship Day!</h4>
+                <p>Our ₹489.00 gift card is the ultimate present for your loved ones. Shop now!</p>
+                <button>Buy Now</button>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
