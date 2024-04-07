@@ -6,6 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ecommerce.loginsignup.ContactUs.ContactForm;
+import com.ecommerce.loginsignup.ContactUs.ContactFormRepository;
+
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
@@ -14,6 +18,21 @@ public class RegistrationController {
     
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ContactFormRepository contactFormRepository;
+
+    @PostMapping("/contact")
+    public String submitContactForm(@ModelAttribute("contactForm") ContactForm contactForm, Model model) {
+        // Save the submitted contact form data to the database
+        contactFormRepository.save(contactForm);
+
+        // Add success message to the model
+        model.addAttribute("success", true);
+
+        // Return the view name or redirect to another page
+        return "contactConfirmation"; // You need to create this HTML template
+    }
 
     @GetMapping("/about-Us")
     public String showAbout() {
@@ -36,7 +55,7 @@ public class RegistrationController {
         return "Wishlist"; 
     }
 
-    @GetMapping("/ContactUs")
+    @GetMapping("/contact")
     public String showContact() {
         return "ContactUs"; 
     }
