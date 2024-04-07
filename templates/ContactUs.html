@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -369,7 +371,7 @@ textarea.input {
             <span class="circle one"></span>
             <span class="circle two"></span>
 
-            <form action="#" method="post" autocomplete="off">
+            <form action="/register/contact" method="post" autocomplete="off">
                 <h3 class="title">Send us a message</h3>
                 <div class="input-container">
                     <input type="text" name="name" class="input" required>
@@ -389,6 +391,10 @@ textarea.input {
                 </div>
                 <input type="submit" value="Send" class="btn">
             </form>
+                <!-- Success message -->
+    <div th:if="${success}" class="success-message">
+      <p>Your message has been submitted successfully!</p>
+  </div>
         </div>
     </div>
 </div>
